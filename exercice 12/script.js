@@ -1,5 +1,5 @@
 alert("essayer de trouver le nombre aléatoire compris entre 1 et 100");
- let nombreAleatoire = (Math.random()*2).toFixed(0);
+ let nombreAleatoire = (Math.random()*100).toFixed(0);
  let nombreChoisi;
  
  console.log(nombreAleatoire);

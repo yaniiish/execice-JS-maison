@@ -7,3 +7,4 @@ function moyenne (tableau){
 }
 
 moyenne([10, 20])
+moyenne([5, 10])

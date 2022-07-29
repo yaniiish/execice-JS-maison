@@ -1,10 +1,14 @@
 let tableauFr = ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Ocotbre", "Novemnbre", "Decembre"]
-let TableauEn = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+let tableauEn = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-function mois (tab){
+let liste1 = document.getElementById("fr");
+let liste2 = document.getElementById("en");
+
+function mois (tab, liste){
     tab.forEach(i => {
-        console.log(i)
+        liste.innerHTML += `<li>${[i]}</li>`
     });
 }
 
-mois(tableauFr)
+mois(tableauFr, liste1);
+mois(tableauEn, liste2);

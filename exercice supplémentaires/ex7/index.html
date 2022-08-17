@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Inscription</h1>
+    <form>
+        <div class="nom">
+            <label for="nom">Nom et prénom *</label>
+            <input type="text" name="nom" id="nom" class="input-nom" required>    
+        </div>
+        <div class="cin">
+            <label for="cin">CIN *</label>
+            <input type="text" name="cin" id="cin" class="input-cin" required maxlength="8" minlength="8" pattern="[1-9]">    
+        </div>
+        <div class="mail">
+            <label for="mail ">Adresse e-mail *</label>
+            <input type="email" name="mail" id="mail" class="input-mail" required>    
+        </div>
+        <div class="radio">
+            <div class="niveau">Niveau * :</div>
+            <label>Secondaire<input type="radio" name="Secondaire" id="Secondaire" value="Secondaire" checked></label>
+            <label>Universitaire<input type="radio" name="Universitaire" id="Universitaire" value="Universitaire"></label>
+            <label>Autre<input type="radio" name="Autre" id="Autre" value="Autre"></label>
+        </div>
+        <div class="select">
+            <label for="input-select">Modules de formations :</label>
+            <select name="input-select" class="input-select" multiple="yes">
+                <option value="bureautique">bureautique</option>
+                <option value="SE et reseaux">SE et reseaux</option>
+                <option value="TIC">TIC</option>
+            </select>
+        </div>
+        <div class="obligation">
+            <p>(*) champs obligatoires.</p>
+        </div>
+        <div class="bouton">
+            <input type="Submit" id="envoyer" value="envoyer" name="envoyer" class="envoyer">
+            <input type="reset" id="annuler" value="annuler" name="annuler">
+        </div>
+
+        <p class="info"></p>
+            
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rosybrown;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: end;
+}
+
+form .radio .niveau {
+    text-align: start;
+    padding-left: 54px;
+}
+
+form .select {
+    text-align: start;
+}
+
+form .select .input-select {
+    display: block;
+    text-align: start;
+    margin-left: 140px;
+}
+

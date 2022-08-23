@@ -28,20 +28,50 @@ afficher.addEventListener('click', afficherStage);
 var creer = document.querySelector('.creer');
 creer.addEventListener('click', creerStage);
 
+
+
 function creerStage() {
     var nomFormation = document.querySelector(".nomFormation");
     var dateDebut = document.querySelector(".dateDebut");
     var dateFin = document.querySelector(".dateFin")
     stage = new Classe(nomFormation.value, dateDebut.value, dateFin.value)
     console.log(nomFormation,dateDebut,dateFin);
-}
 
+    
+    document.body.appendChild(ajoutStagiaireFormulaireNom);
+    document.body.appendChild(ajoutStagiaireFormulairePrenom);
+    document.body.appendChild(boutonAjoutStagiaire);
+}
 
 function afficherStage(){
     console.log(stage);
-    var affichage = document.querySelector(".afficher")
-    affichage.innerHTML += `${JSON.stringify(stage)}`
+    var affichage = document.querySelector(".affichage");
+    stageJsonIntitule = JSON.stringify(stage.intitule);
+    stageJsonDateDebut = JSON.stringify(stage.dateDebut);
+    stageJsonDateFin = JSON.stringify(stage.dateFin);
+    affichage.innerHTML += `${stageJsonIntitule + stageJsonDateDebut + stageJsonDateFin}`;
 }
 
-console.log(Classe);
+
+
+var ajoutStagiaireFormulaireNom = document.createElement("input");
+ajoutStagiaireFormulaireNom.placeholder = "Nom stagiaire";
+var ajoutStagiaireFormulairePrenom = document.createElement("input");
+ajoutStagiaireFormulairePrenom.placeholder = "Prénom stagiaire";
+
+var boutonAjoutStagiaire = document.createElement("button");
+boutonAjoutStagiaire.innerText = "ajout stagiaire";
+boutonAjoutStagiaire.addEventListener("click", ajoutStagiaire);
+
+function ajoutStagiaire() {
+    let stagiaire = new Stagiaire(ajoutStagiaireFormulaireNom.value ,ajoutStagiaireFormulairePrenom.value);
+    stage.listeStagiaire.push(stagiaire);
+    console.log(stage);
+    var select = document.createElement("select");
+    var selectOption = document.createElement("option");
+    selectOption.innerText += ajoutStagiaireFormulaireNom.value;
+    document.body.appendChild(select);
+    select.appendChild(selectOption);
+ }
+
 

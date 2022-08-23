@@ -10,6 +10,7 @@ class Classe {
         this.listeStagiaire = new Array();
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
+        // le this permet de dire qu'enfaite la valeur du paramètre est = à la valeur de ce qu'on a déclarer au dessus.
     }
 
     ajouterStagiaire(stagiaire){

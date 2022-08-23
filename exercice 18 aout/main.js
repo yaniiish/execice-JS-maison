@@ -28,7 +28,7 @@ afficher.addEventListener('click', afficherStage);
 var creer = document.querySelector('.creer');
 creer.addEventListener('click', creerStage);
 
-
+var select;
 
 function creerStage() {
     var nomFormation = document.querySelector(".nomFormation");
@@ -37,20 +37,21 @@ function creerStage() {
     stage = new Classe(nomFormation.value, dateDebut.value, dateFin.value)
     console.log(nomFormation,dateDebut,dateFin);
 
+    select = document.createElement("select");
+
     
     document.body.appendChild(ajoutStagiaireFormulaireNom);
     document.body.appendChild(ajoutStagiaireFormulairePrenom);
     document.body.appendChild(boutonAjoutStagiaire);
+    document.body.appendChild(select);
+    
 }
 
 function afficherStage(){
     console.log(stage);
     var affichage = document.querySelector(".affichage");
-    stageJsonIntitule = JSON.stringify(stage.intitule);
-    stageJsonDateDebut = JSON.stringify(stage.dateDebut);
-    stageJsonDateFin = JSON.stringify(stage.dateFin);
-    affichage.innerHTML += `${stageJsonIntitule + stageJsonDateDebut + stageJsonDateFin}`;
-}
+    affichage.innerHTML +=  `Le stage ${stage.intitule} commencera le ${stage.dateDebut} et finira le ${stage.dateFin}` ;
+} 
 
 
 
@@ -63,15 +64,17 @@ var boutonAjoutStagiaire = document.createElement("button");
 boutonAjoutStagiaire.innerText = "ajout stagiaire";
 boutonAjoutStagiaire.addEventListener("click", ajoutStagiaire);
 
+
 function ajoutStagiaire() {
-    let stagiaire = new Stagiaire(ajoutStagiaireFormulaireNom.value ,ajoutStagiaireFormulairePrenom.value);
-    stage.listeStagiaire.push(stagiaire);
+    let stagiaireForm = new Stagiaire(ajoutStagiaireFormulaireNom.value ,ajoutStagiaireFormulairePrenom.value);
+    stage.listeStagiaire.push(stagiaireForm);
     console.log(stage);
-    var select = document.createElement("select");
-    var selectOption = document.createElement("option");
-    selectOption.innerText += ajoutStagiaireFormulaireNom.value;
-    document.body.appendChild(select);
+    
+        var selectOption = document.createElement("option");
+        selectOption.innerText = ajoutStagiaireFormulairePrenom.value
+
     select.appendChild(selectOption);
+
  }
 
 

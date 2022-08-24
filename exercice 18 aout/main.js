@@ -77,4 +77,4 @@ function ajoutStagiaire() {
 
  }
 
-
+console.log(stage);

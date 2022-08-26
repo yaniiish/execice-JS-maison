@@ -20,6 +20,8 @@ creer.addEventListener("click", creerSalarie);
 function creerSalarie(){
     nouveauSalarié = new Salarie(inputPrenom.value, inputNom.value, inputTauxHoraires.value, inputNombreHeure.value);
     console.log(nouveauSalarié);
+    calculeSalaireHebdo.disabled = false;
+    calculeSalaireMensuel.disabled = false;
 }
 
 calculeSalaireHebdo.addEventListener("click", calculeSalaireHebdoSalarie)

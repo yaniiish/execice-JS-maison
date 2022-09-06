@@ -12,6 +12,9 @@ creer.addEventListener('click', creerCombinaison)
 
 function creerCombinaison(){
     deuxChiffres = new Calcul(champsA.value, champsB.value)
+    boutonAddition.disabled = false;
+    boutonMultiplication.disabled = false;
+
     console.log(deuxChiffres);
 }
 

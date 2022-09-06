@@ -3,7 +3,7 @@ class Rectangle {
     largeur;
 
     constructor(longueur, largeur){
-        this.longueur = longueur;
+        this.longueur = longueur; //this largeur est l'attribut de la classe il peut etre enfaite utilisé que dans la classe
         this.largeur = largeur;
     }
 

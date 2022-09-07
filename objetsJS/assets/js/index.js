@@ -1,4 +1,9 @@
 class Vehicules {
+    voiture;
+    annee;
+    marque;
+    voitureArray;
+
     constructor(voiture, annee, marque){
         this.carName = voiture; 
         this.year = annee;
@@ -11,27 +16,24 @@ class Vehicules {
         this.voitureArray.push(voiture)
     }
 
+    afficherGarage(){
+        for (let i = 0; i < this.voitureArray.length; i++){
+            return "Dans le garage il y a"  +  this.voitureArray[i]
+        }
+        
+    }
+
     afficheCarName(x){
-        return x + "Dans mon garage il y a " + this.carName;
+        return "Dans mon garage il y a " + this.carName;
     }
 }
 
-myCar = new Vehicules("", "" ,"Vw")
+myCar = new Vehicules("", "" ,"")
 myCar.ajouterVoiture("BMW")
 myCar.ajouterVoiture("206")
 myCar.ajouterVoiture("CLIO")
 
 
-
-
-
-console.log(myCar);
-
-
-
-
-
-
 let test = document.getElementById("test")
-test.innerHTML = myCar.afficheCarName("bienvenue ")
+test.innerHTML = myCar.afficherGarage("bjr")
 

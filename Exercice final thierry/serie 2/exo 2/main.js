@@ -1,6 +1,11 @@
 function affichageDonnees(donnees) {
-    document.querySelector('#demo').innerHTML = `affiche : ${donnees.produits}`
-    console.log(JSON.parse(donnees));
+    let demo = document.querySelector('#demo') 
+    let resultat = JSON.parse(donnees)
+    console.log(resultat);
+    resultat.produits.forEach(element => {
+       demo.innerHTML += `<li>${element.titre} <img src="${element.url}"><li>`
+
+    });
 
 }
 
